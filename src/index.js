@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './components/app/';
+import App from './components/app/app';
 
 // function WhoAmI(props) {
 //   return (
@@ -25,7 +25,7 @@ class WhoAmI extends Component {
     //   }))
     // }
   }
-
+  
   nextYear = () => {
     this.setState(state => ({
       years: ++state.years
@@ -42,6 +42,7 @@ class WhoAmI extends Component {
   render() {
     const {name, surname, link} = this.props;
     const {years} = this.state;
+    console.log(this.state);
     return (
       <>
         <button onClick={this.nextYear}>++</button>
@@ -84,8 +85,8 @@ const All = () => {
 
 ReactDOM.render(
 <React.StrictMode>
-    {/* <App /> */}
-    <All/>
+    <App />
+    {/* <All/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
